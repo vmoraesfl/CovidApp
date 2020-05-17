@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Calendar } from "react-native-calendars";
 
 function HomeScreen({ navigation }) {
   return (
@@ -23,6 +24,22 @@ function SecondScreen() {
   );
 }
 
+function CalendarScreen() {
+  return (
+    <View style={styles.container}>
+      <Calendar
+        hideExtraDays={true}
+        hideDayNames={true}
+        theme={{
+          calendarBackground: "#2195F2",
+          arrowColor: "#fff",
+          monthTextColor: "#fff",
+        }}
+      />
+    </View>
+  );
+}
+
 const Stack = createStackNavigator();
 
 function App() {
@@ -31,6 +48,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Second" component={SecondScreen} />
+        <Stack.Screen name="Calendar" component={CalendarScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
