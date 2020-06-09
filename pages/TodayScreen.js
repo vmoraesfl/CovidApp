@@ -444,7 +444,7 @@ const TodayScreen = ({ navigation }) => {
               <TextView
                 h5
                 bold
-                style={{ marginLeft: -10 }}
+                style={{ marginLeft: 0 }}
                 color={Colors.green}
                 m
               >
